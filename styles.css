@@ -1,0 +1,29 @@
+@font-face {
+    font-family: digimonFont;
+    src: url(PixelDigivolve-mOm9.ttf);
+}
+
+h1{
+    font-family: digimonFont;
+    font-size: 50px;
+    font-weight: 100;
+    font-style: italic;
+    letter-spacing: 0.8px;
+    background: #FF880D;
+    background: -webkit-linear-gradient(to top, #FF880D 0%, #FFBF5B 50%, #FFF9AC 100%);
+    background: -moz-linear-gradient(to top, #FF880D 0%, #FFBF5B 50%, #FFF9AC 100%);
+    background: linear-gradient(to top, #FF880D 0%, #FFBF5B 50%, #FFF9AC 100%);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1px #229cb0;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+}
+img{
+    height: 200px;
+    width: 200px;
+}
