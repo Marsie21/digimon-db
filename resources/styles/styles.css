@@ -1,10 +1,5 @@
-@font-face {
-    font-family: digimonFont;
-    src: url(PixelDigivolve-mOm9.ttf);
-}
-
 h1{
-    font-family: digimonFont;
+    font-family: 'Pixel Digivolve', sans-serif;
     font-size: 50px;
     font-weight: 100;
     font-style: italic;
