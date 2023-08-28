@@ -30,25 +30,33 @@ let digiApp = (function () {
         var str="";
 
         for(var i=0; i < digimonData.length; i++){
-            str += "<img src='" + digimonData[i].img + "'><br>" + "Name: " + digimonData[i].name + "<br>" + "Level: " + digimonData[i].level + "<br><br>";
+            str += 
+                "<tr>" +
+                "   <td><img src='" + digimonData[i].img + "'></td>" + 
+                "   <td>Name: " + digimonData[i].name + "</td>" + 
+                "   <td>Level: " + digimonData[i].level + "</td>" +
+                "</tr>";
+                
         }
-        $("#container").html(str);
+        $("table").html(str);
     }
 
     function setListeners() {
-        //Search for specific digimon using name
-        $("#searchBtn").on('click', function(){
+        //Fetches all the list of digimon again when textbox is empty 
+        //Dynamic search on keyup
+        $("#search").keyup(function() {
+            var val = $.trim(this.value).toUpperCase();
+            var $cells = $("td");
 
-            var searched = $("#searchInput").val();
-            const found = digimonData.find(({name}) => name === searched );
-            var str="";
-
-            str += "<img src='" + found.img + "'><br>" + "Name: " + found.name + "<br>" + "Level: " + found.level + "<br><br>";
-            
-            $("#container").html(str);
-
+            if (!this.value)
+                $cells.parent().show();
+            else {
+                $cells.parent().hide();
+                $cells.filter(function() {
+                    return -1 != $(this).text().toUpperCase().indexOf(val); }).parent().show();
+            }
         });
-       
+
     }
 
     return {
