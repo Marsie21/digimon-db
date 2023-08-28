@@ -1,4 +1,5 @@
 let digiApp = (function () {
+    let digimonData = [];
 
     // When this method is called, fetch the list of digimons and set the listeners
     function init() {
@@ -8,8 +9,7 @@ let digiApp = (function () {
 
     function fetch() {
         const digimonApiURI = 'https://digimon-api.vercel.app/api/digimon';
-        var searched = $("#searchInput").val();
-
+        
         $.ajax({
             url: digimonApiURI,
             method: "GET",
@@ -17,13 +17,8 @@ let digiApp = (function () {
             dataType: "json",
 
             success: function(data) {
-                var str="";
-
-                for(var i=0; i < data.length; i++){
-                    str += "<img src='" + data[i].img + "'><br>" + "Name: " + data[i].name + "<br>" + "Level: " + data[i].level + "<br><br>";
-                }
-                $("#container").html(str);
-
+                digimonData = data;
+                render();
             },
             error: function(xhr, status, error) {
                 // Handle any errors
@@ -31,8 +26,29 @@ let digiApp = (function () {
         });
     }
 
+    function render() {
+        var str="";
+
+        for(var i=0; i < digimonData.length; i++){
+            str += "<img src='" + digimonData[i].img + "'><br>" + "Name: " + digimonData[i].name + "<br>" + "Level: " + digimonData[i].level + "<br><br>";
+        }
+        $("#container").html(str);
+    }
+
     function setListeners() {
-        $("#searchBtn").on('click', fetch);
+        //Search for specific digimon using name
+        $("#searchBtn").on('click', function(){
+
+            var searched = $("#searchInput").val();
+            const found = digimonData.find(({name}) => name === searched );
+            var str="";
+
+            str += "<img src='" + found.img + "'><br>" + "Name: " + found.name + "<br>" + "Level: " + found.level + "<br><br>";
+            
+            $("#container").html(str);
+
+        });
+       
     }
 
     return {
