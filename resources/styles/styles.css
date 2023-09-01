@@ -1,6 +1,11 @@
+html{
+    background: url('vecteezy-future-bg.jpg');
+    color: #ffffff;
+}
+
 h1{
     font-family: 'Pixel Digivolve', sans-serif;
-    font-size: 50px;
+    font-size: calc(8px + 1.5625vw);
     font-weight: 100;
     font-style: italic;
     letter-spacing: 0.8px;
@@ -14,11 +19,34 @@ h1{
     -webkit-text-stroke: 1px #229cb0;
 }
 
+#search{
+    padding: 0.1em;
+    border: 3px solid white;
+    border-radius: 50px;
+    background-color: #229cb0;
+}
+
 #container{
+    padding: calc(8px + 1.5625vw);
+    margin: auto;
+    width: 100%;
+}
+
+tbody{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
-img{
-    height: 200px;
-    width: 200px;
+
+tr{
+    border: 2px solid black;
+    margin: 0.5em;
+}
+
+.digimonImg{
+    height: 140px;
+    width: 140px;
+}
+
+.credits{
+    color: #ffffff;
 }

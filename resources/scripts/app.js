@@ -32,9 +32,9 @@ let digiApp = (function () {
         for(var i=0; i < digimonData.length; i++){
             str += 
                 "<tr>" +
-                "   <td><img src='" + digimonData[i].img + "'></td>" + 
-                "   <td>Name: " + digimonData[i].name + "</td>" + 
-                "   <td>Level: " + digimonData[i].level + "</td>" +
+                "   <td id='image'><img class='digimonImg' src='" + digimonData[i].img + "'></td>" + 
+                "   <td id='dName'>Name: " + digimonData[i].name + "</td>" + 
+                "   <td id='level'>Level: " + digimonData[i].level + "</td>" +
                 "</tr>";
                 
         }
