@@ -5,30 +5,30 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <title>Test Title</title>
         <link href="https://fonts.cdnfonts.com/css/pixel-digivolve" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="resources/styles/styles.css">
     </head>
     <body>
-        <header>
+        <header class="navbar">
             <h1>Digimon Database</h1>
+            <div id="searchParent">
+                <i class="fa fa-search"></i>
+                <input type="text" id="searchBox" placeholder="Search..." name="search">
+            </div>
         </header>
         <!--Main Content-->
         <main>
-            <div id="searchBox">
-                <label>Search</label>
-                <input type="text" id="search">
-            </div>
             <!--Digimon list-->
             <div id="container">
-                <table>
+                <table id="digiTable" align="center">
                     <!--js render-->
                 </table>
             </div>
+        </main>
         <footer>
             <a class="credits" href="https://www.vecteezy.com/free-vector/tech-pattern">Tech Pattern Vectors by Vecteezy</a>
         </footer>
-
-            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-            <script src="resources/scripts/app.js"></script>
-        </main>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="resources/scripts/app.js"></script>
     </body>
 </html>

@@ -31,12 +31,11 @@ let digiApp = (function () {
 
         for(var i=0; i < digimonData.length; i++){
             str += 
-                "<tr>" +
+                "<tr class='digimon'>" +
                 "   <td id='image'><img class='digimonImg' src='" + digimonData[i].img + "'></td>" + 
                 "   <td id='dName'>Name: " + digimonData[i].name + "</td>" + 
                 "   <td id='level'>Level: " + digimonData[i].level + "</td>" +
                 "</tr>";
-                
         }
         $("table").html(str);
     }
@@ -44,12 +43,13 @@ let digiApp = (function () {
     function setListeners() {
         //Fetches all the list of digimon again when textbox is empty 
         //Dynamic search on keyup
-        $("#search").keyup(function() {
+        $("#searchBox").keyup(function() {
             var val = $.trim(this.value).toUpperCase();
             var $cells = $("td");
 
             if (!this.value)
                 $cells.parent().show();
+
             else {
                 $cells.parent().hide();
                 $cells.filter(function() {
